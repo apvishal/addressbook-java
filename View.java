@@ -21,9 +21,9 @@ public class View{
 		
 	}
 
-	public static void main(String args[]){
-		initFrame();
-	}
+//	public static void main(String args[]){
+//		initFrame();
+//	}
 }
 
 class DeleteTab extends JPanel{
@@ -46,6 +46,7 @@ class SearchTab extends JPanel{
 	public SearchTab(String str){
 		JLabel searchLabel = new JLabel(str);
 		add(searchLabel);
+		
 	}
 }
 
