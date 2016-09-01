@@ -16,6 +16,7 @@ public class View{
 		tabs = new JTabbedPane();
 		tabs.addTab("Search", new SearchTab("This is the search Tab!"));
 		tabs.addTab("Insert", new InsertTab("This is the insert tab!"));
+		tabs.addTab("Delete", new DeleteTab("This is the tab used to delete items from the database"));
 		mainFrame.add(tabs);
 		
 	}
@@ -24,6 +25,14 @@ public class View{
 		initFrame();
 	}
 }
+
+class DeleteTab extends JPanel{
+	public DeleteTab(String str){
+		JLabel deleteLabel = new JLabel(str);
+		add(deleteLabel);
+	}
+}
+
 
 class InsertTab extends JPanel{
 	public InsertTab(String str){
