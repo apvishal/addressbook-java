@@ -55,46 +55,40 @@ class SearchTab extends JPanel{
 		//create labels..		
 		JLabel searchLabel = new JLabel("Search by...");
 		JLabel nameLabel = new JLabel("Name: ");
-//		JLabel addressLabel = new JLabel("Address: ");
-//		JLabel phoneLabel = new JLabel("Phone Number: ");
+		JLabel addressLabel = new JLabel("Address: ");
+		JLabel phoneLabel = new JLabel("Phone Number: ");
 
 		//create text fields...
-		JTextField searchField = new JTextField(10);
 		JTextField nameField = new JTextField(20);
-//		JTextField addressField = new JTextField(20);
-//		JTextField phoneField = new JTextField(20);
+		JTextField addressField = new JTextField(20);
+		JTextField phoneField = new JTextField(20);
 
 
 		gl.setHorizontalGroup(gl.createSequentialGroup()
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addComponent(searchLabel)
-				.addComponent(nameLabel))
-//			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
-//				.addComponent(nameLabel))
-//				.addComponent(addressLabel)
-//				.addComponent(phoneLabel))		
+				.addComponent(nameLabel)
+				.addComponent(addressLabel)
+				.addComponent(phoneLabel))		
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
-				.addComponent(searchField)
-				.addComponent(nameField))
+				.addComponent(nameField)
+				.addComponent(addressField)
+				.addComponent(phoneField))
 );
 
 		gl.setVerticalGroup(gl.createSequentialGroup()
-			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
 				.addComponent(searchLabel)
-				.addComponent(searchField))
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
 				.addComponent(nameLabel)
 				.addComponent(nameField))
-//			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-//				.addComponent(addressLabel)
-//				.addComponent(addressField))
-//			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-//				.addComponent(phoneLabel)
-//				.addComponent(phoneField))
-//
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(addressLabel)
+				.addComponent(addressField))
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(phoneLabel)
+				.addComponent(phoneField))
 
 );
-System.out.println("Hello there");		
 
 	
 
