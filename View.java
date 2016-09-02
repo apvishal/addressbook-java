@@ -14,7 +14,7 @@ public class View{
 		mainFrame.setVisible(true);
 
 		tabs = new JTabbedPane();
-		tabs.addTab("Search", new SearchTab("This is the search Tab!"));
+		tabs.addTab("Search", new SearchTab());
 		tabs.addTab("Insert", new InsertTab("This is the insert tab!"));
 		tabs.addTab("Delete", new DeleteTab("This is the tab used to delete items from the database"));
 		mainFrame.add(tabs);
@@ -43,10 +43,55 @@ class InsertTab extends JPanel{
 
 
 class SearchTab extends JPanel{
-	public SearchTab(String str){
-		JLabel searchLabel = new JLabel(str);
-		add(searchLabel);
-		
+	public SearchTab(){
+		//give this panel a border)
+		this.setBorder(BorderFactory.createMatteBorder(10,10,10,10, Color.BLUE));
+
+		//set the group layout
+		GroupLayout gl = new GroupLayout(this);
+		this.setLayout(gl);
+		gl.setAutoCreateGaps(true);
+
+		//create labels..		
+		JLabel searchLabel = new JLabel("Search by...");
+//		JLabel nameLabel = new JLabel("Name: ");
+//		JLabel addressLabel = new JLabel("Address: ");
+//		JLabel phoneLabel = new JLabel("Phone Number: ");
+/*
+		//create text fields...
+		JTextField nameField = new JTextField(20);
+		JTextField addressField = new JTextField(20);
+		JTextField phoneField = new JTextField(20);
+
+*/
+		gl.setHorizontalGroup(gl.createSequentialGroup()
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addComponent(searchLabel))
+/*			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addComponent(nameLabel)
+				.addComponent(addressLabel)
+				.addComponent(phoneLabel))		
+*/
+);
+
+		gl.setVerticalGroup(gl.createSequentialGroup()
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(searchLabel))
+/*			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(nameLabel)
+				.addComponent(nameField))
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(addressLabel)
+				.addComponent(addressField))
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(phoneLabel)
+				.addComponent(phoneField))
+*/
+);
+System.out.println("Hello there");		
+
+	
+
 	}
 }
 
