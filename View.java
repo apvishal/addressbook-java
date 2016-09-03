@@ -65,6 +65,9 @@ class SearchTab extends JPanel{
 		JTextField addressField = new JTextField(20);
 		JTextField phoneField = new JTextField(20);
 
+		//create buttons
+		JButton searchButton = new JButton("Search Info");
+		JButton clearButton = new JButton("Clear Fields");
 
 		gl.setHorizontalGroup(gl.createSequentialGroup()
 				.addComponent(searchLabel)
@@ -75,15 +78,18 @@ class SearchTab extends JPanel{
 						.addComponent(addressLabel))
 					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addComponent(firstField)
-						.addComponent(addressField))))
-	
-/*
+						.addComponent(addressField)))
+					.addComponent(searchButton))
 
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
-				.addComponent(nameField)
-				.addComponent(addressField)
-				.addComponent(phoneField))
-*/
+				.addGroup(gl.createSequentialGroup()
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(lastLabel)
+						.addComponent(phoneLabel))
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(lastField)
+						.addComponent(phoneField)))
+					.addComponent(clearButton))
 );
 
 		gl.setVerticalGroup(gl.createSequentialGroup()
@@ -92,24 +98,18 @@ class SearchTab extends JPanel{
 				.addGroup(gl.createSequentialGroup()
 					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(firstLabel)
-						.addComponent(firstField))
+						.addComponent(firstField)
+						.addComponent(lastLabel)
+						.addComponent(lastField))
 					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
 						.addComponent(addressLabel)
-						.addComponent(addressField))))
+						.addComponent(addressField)
+						.addComponent(phoneLabel)
+						.addComponent(phoneField))))
 
-/*			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-				.addComponent(firstLabel)
-				.addComponent(firstField)
-				.addComponent(lastLabel)
-				.addComponent(LastField))
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-				.addComponent(addressLabel)
-				.addComponent(addressField))
-			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-				.addComponent(phoneLabel)
-				.addComponent(phoneField))
-
-*/
+				.addComponent(searchButton)
+				.addComponent(clearButton))
 );
 
 	
