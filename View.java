@@ -54,33 +54,54 @@ class SearchTab extends JPanel{
 
 		//create labels..		
 		JLabel searchLabel = new JLabel("Search by...");
-		JLabel nameLabel = new JLabel("Name: ");
+		JLabel firstLabel = new JLabel("F. Name:");
+		JLabel lastLabel = new JLabel("L. Name:");
 		JLabel addressLabel = new JLabel("Address: ");
 		JLabel phoneLabel = new JLabel("Phone Number: ");
 
 		//create text fields...
-		JTextField nameField = new JTextField(20);
+		JTextField firstField = new JTextField(20);
+		JTextField lastField = new JTextField(20);
 		JTextField addressField = new JTextField(20);
 		JTextField phoneField = new JTextField(20);
 
 
 		gl.setHorizontalGroup(gl.createSequentialGroup()
-			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addComponent(searchLabel)
-				.addComponent(nameLabel)
-				.addComponent(addressLabel)
-				.addComponent(phoneLabel))		
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addGroup(gl.createSequentialGroup()
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(firstLabel)
+						.addComponent(addressLabel))
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(firstField)
+						.addComponent(addressField))))
+	
+/*
+
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addComponent(nameField)
 				.addComponent(addressField)
 				.addComponent(phoneField))
+*/
 );
 
 		gl.setVerticalGroup(gl.createSequentialGroup()
 				.addComponent(searchLabel)
-			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
-				.addComponent(nameLabel)
-				.addComponent(nameField))
+			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+				.addGroup(gl.createSequentialGroup()
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+						.addComponent(firstLabel)
+						.addComponent(firstField))
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+						.addComponent(addressLabel)
+						.addComponent(addressField))))
+
+/*			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+				.addComponent(firstLabel)
+				.addComponent(firstField)
+				.addComponent(lastLabel)
+				.addComponent(LastField))
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
 				.addComponent(addressLabel)
 				.addComponent(addressField))
@@ -88,6 +109,7 @@ class SearchTab extends JPanel{
 				.addComponent(phoneLabel)
 				.addComponent(phoneField))
 
+*/
 );
 
 	
