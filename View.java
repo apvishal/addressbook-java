@@ -14,7 +14,7 @@ public class View{
 
 		tabs = new JTabbedPane();
 		tabs.addTab("Search", new searchView());
-		tabs.addTab("Insert", new InsertTab("This is the insert tab!"));
+		tabs.addTab("Insert", new insertView());
 		tabs.addTab("Delete", new DeleteTab("This is the tab used to delete items from the database"));
 		mainFrame.add(tabs);
 		mainFrame.setVisible(true);
@@ -33,13 +33,6 @@ class DeleteTab extends JPanel{
 	}
 }
 
-
-class InsertTab extends JPanel{
-	public InsertTab(String str){
-		JLabel insertLabel = new JLabel(str);
-		add(insertLabel);
-	}
-}
 
 
 

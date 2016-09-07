@@ -1,7 +1,27 @@
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
-class searchView extends JPanel{
-/*	class SearchTab()*/{
+
+class searchView extends JPanel implements ActionListener{
+	
+	//create labels..		
+	private JLabel searchLabel = new JLabel("Search by...");
+	private JLabel firstLabel = new JLabel("F. Name:");
+	private JLabel lastLabel = new JLabel("L. Name:");
+	private JLabel addressLabel = new JLabel("Address: ");
+	private JLabel phoneLabel = new JLabel("Phone Number: ");
+
+	//create text fields...
+	private JTextField firstField = new JTextField(20);
+	private JTextField lastField = new JTextField(20);
+	private JTextField addressField = new JTextField(20);
+	private JTextField phoneField = new JTextField(20);
+
+	//create buttons
+	private JButton searchButton = new JButton("Search Info");
+	private JButton clearButton = new JButton("Clear Fields");
+
+	public searchView(){
 		//give this panel a border)
  		this.setBorder(BorderFactory.createMatteBorder(10,10,10,10, Color.BLUE));
 
@@ -10,22 +30,12 @@ class searchView extends JPanel{
 		this.setLayout(gl);
 		gl.setAutoCreateGaps(true);
 
-		//create labels..		
-		JLabel searchLabel = new JLabel("Search by...");
-		JLabel firstLabel = new JLabel("F. Name:");
-		JLabel lastLabel = new JLabel("L. Name:");
-		JLabel addressLabel = new JLabel("Address: ");
-		JLabel phoneLabel = new JLabel("Phone Number: ");
-
-		//create text fields...
-		JTextField firstField = new JTextField(20);
-		JTextField lastField = new JTextField(20);
-		JTextField addressField = new JTextField(20);
-		JTextField phoneField = new JTextField(20);
-
-		//create buttons
-		JButton searchButton = new JButton("Search Info");
-		JButton clearButton = new JButton("Clear Fields");
+		//set jbutton actions
+		searchButton.setActionCommand("SEARCH");
+		searchButton.addActionListener(this);
+	
+		clearButton.setActionCommand("CLEAR");
+		clearButton.addActionListener(this);
 
 		gl.setHorizontalGroup(gl.createSequentialGroup()
 				.addComponent(searchLabel)
@@ -69,8 +79,19 @@ class searchView extends JPanel{
 				.addComponent(searchButton)
 				.addComponent(clearButton))
 );
-
-	
-
 	}
+
+	public void actionPerformed(ActionEvent evt){
+		String command = evt.getActionCommand();
+		if (command == "SEARCH"){
+			System.out.println("Search command found");
+		}
+		else{
+			firstField.setText("");
+			lastField.setText("");
+			addressField.setText("");
+			phoneField.setText("");
+		}
+	}	
+
 }
