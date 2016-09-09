@@ -28,7 +28,7 @@ class searchView extends JPanel implements ActionListener{
  		this.setBorder(BorderFactory.createMatteBorder(10,10,10,10, Color.BLUE));
 
 		//set the group layout
-		GroupLayout gl = new GroupLayout(this);
+		final GroupLayout gl = new GroupLayout(this);
 		this.setLayout(gl);
 		gl.setAutoCreateGaps(true);
 
