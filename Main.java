@@ -1,4 +1,4 @@
-package abjava;
+//package abjava;
 
 public class Main{
 	public static void main(String args[]){
