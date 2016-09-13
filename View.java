@@ -17,23 +17,14 @@ public class View{
 		tabs = new JTabbedPane();
 		tabs.addTab("Search", new searchView());
 		tabs.addTab("Insert", new insertView());
-		tabs.addTab("Delete", new DeleteTab("This is the tab used to delete items from the database"));
+		tabs.addTab("Delete", new deleteView());
 		mainFrame.add(tabs);
 		mainFrame.setVisible(true);
 		
 	}
 
-//	public static void main(String args[]){
-//		initFrame();
-//	}
 }
 
-class DeleteTab extends JPanel{
-	public DeleteTab(String str){
-		JLabel deleteLabel = new JLabel(str);
-		add(deleteLabel);
-	}
-}
 
 
 

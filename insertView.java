@@ -5,7 +5,7 @@ import java.awt.event.*;
 import javax.swing.*;
 
 
-class insertView extends JPanel{
+class insertView extends JPanel implements ActionListener{
 	
 	//labels
 	private JLabel prompt = new JLabel("Input all Fields");
@@ -37,6 +37,13 @@ class insertView extends JPanel{
 		this.setLayout(gl);
 		gl.setAutoCreateGaps(true);
 		
+		inputButton.setActionCommand("INPUT");
+		inputButton.addActionListener(this);
+
+		clearButton.setActionCommand("CLEAR");
+		clearButton.addActionListener(this);
+
+
 		gl.setHorizontalGroup(gl.createSequentialGroup()
 			.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
 				.addComponent(prompt)
@@ -99,7 +106,19 @@ class insertView extends JPanel{
 
 	}
 
-
+	public void actionPerformed(ActionEvent evt){
+		String command = evt.getActionCommand();
+		if(command == "INPUT") System.out.println("Input command found!");
+		else{
+			fnField.setText("");
+			lnField.setText("");
+			streetField.setText("");
+			cityField.setText("");
+			stateField.setText("");
+			zipField.setText("");
+			phoneField.setText("");
+		}
+	}
 
 }
 
