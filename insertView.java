@@ -108,7 +108,9 @@ class insertView extends JPanel implements ActionListener{
 
 	public void actionPerformed(ActionEvent evt){
 		String command = evt.getActionCommand();
-		if(command == "INPUT") System.out.println("Input command found!");
+		if(command == "INPUT"){
+			insertController.inputInfo(fnField.getText(), lnField.getText());
+		}
 		else{
 			fnField.setText("");
 			lnField.setText("");
