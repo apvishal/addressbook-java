@@ -109,7 +109,11 @@ class insertView extends JPanel implements ActionListener{
 	public void actionPerformed(ActionEvent evt){
 		String command = evt.getActionCommand();
 		if(command == "INPUT"){
-			insertController.inputInfo(fnField.getText(), lnField.getText());
+			dataBaseControl.insert_to_dataBase(fnField.getText(), lnField.getText(),
+							streetField.getText(), cityField.getText(),
+							stateField.getText(), zipField.getText(),
+							phoneField.getText());
+
 		}
 		else{
 			fnField.setText("");
