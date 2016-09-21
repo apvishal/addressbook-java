@@ -23,11 +23,11 @@ public class dataBaseControl
 	public dataBaseControl()
 	{
 
-		url = "jdbc:mysql://localhost/AddressBook";
+		url = "jdbc:mysql://localhost/";
 
 		//blank for privacy purposes
-		user = "root";
-		pw = "vishal";
+		user = "";
+		pw = "";
 		
 		try{
 
@@ -82,9 +82,9 @@ public class dataBaseControl
 
 		try{
 
-			statement.executeUpdate(command);
+			statement.executeQuery(command);
 			command = "INSERT INTO Name (id, first, last)"
-				+ "VALUES (" + id + ", \"MR\",\"BROSKIAN\")";
+				+ "VALUES (" + id + ", \"" + f + "\", \"" + l + "\")";
 			statement.executeUpdate(command);
 
 		}
