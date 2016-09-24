@@ -7,8 +7,8 @@ public class Main{
 	}
 	public void runApplication(){
 	
-		View.initFrame();
 		dataBaseControl run_db = new dataBaseControl();
+		View.initFrame();
 	}
 }
 

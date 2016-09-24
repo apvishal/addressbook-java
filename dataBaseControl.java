@@ -23,11 +23,11 @@ public class dataBaseControl
 	public dataBaseControl()
 	{
 
-		url = "jdbc:mysql://localhost/";
+		url = "jdbc:mysql://localhost/AddressBook";
 
 		//blank for privacy purposes
-		user = "";
-		pw = "";
+		user = "root";
+		pw = "vishal";
 		
 		try{
 
@@ -38,7 +38,6 @@ public class dataBaseControl
 			command = "USE AddressBook";
 			statement.executeUpdate(command);
 			System.out.println("connection Established");
-
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -75,6 +74,10 @@ public class dataBaseControl
 			//call insert_name and perform the operation...
 			insert_name_db(id_num, f, l);
 		}
+
+
+		//this should be at the end of the function only...
+		deleteView.refresh_model();
 	}
 
 
@@ -93,5 +96,37 @@ public class dataBaseControl
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
+
+	public static DefaultComboBoxModel get_model(){
+
+		DefaultComboBoxModel m = new DefaultComboBoxModel();
+		String str, final_string;
+
+		try{
+//			statement.executeQuery("USE AddressBook");
+			rs = statement.executeQuery("SELECT * FROM Name");
+			System.out.println("HERE");
+			while(rs.next()){
+			final_string = "";
+			id_num = rs.getInt(1);
+			str = rs.getString(2);
+			final_string = Integer.toString(id_num) + " " + str + " ";
+			str = rs.getString(3);
+			final_string += str;
+			//System.out.println(id_num);
+			m.addElement(final_string);
+			}
+
+		}
+		catch(Exception e){
+			JOptionPane.showMessageDialog(null, "ERROR: getMODEL" + e.getMessage());
+		}
+
+
+		return m;
+		
+	}
+
+
 }
 

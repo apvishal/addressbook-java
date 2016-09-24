@@ -113,6 +113,8 @@ class insertView extends JPanel implements ActionListener{
 							streetField.getText(), cityField.getText(),
 							stateField.getText(), zipField.getText(),
 							phoneField.getText());
+			//we must update our list incase of the user wants to delete a an input...
+			deleteView.refresh_model();
 
 		}
 		else{
@@ -127,4 +129,5 @@ class insertView extends JPanel implements ActionListener{
 	}
 
 }
+
 
