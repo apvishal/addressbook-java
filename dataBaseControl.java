@@ -8,7 +8,7 @@ fields blank for privacy...
 
 public class dataBaseControl
 {
-	private		Connection conn;
+	private	static	Connection conn;
 	private static 	Statement statement;
 	private static 	ResultSet rs;
 
@@ -23,11 +23,11 @@ public class dataBaseControl
 	public dataBaseControl()
 	{
 
-		url = "jdbc:mysql://localhost/AddressBook";
+		url = "jdbc:mysql://localhost/";
 
 		//blank for privacy purposes
-		user = "root";
-		pw = "vishal";
+		user = "";
+		pw = "";
 		
 		try{
 
@@ -125,6 +125,17 @@ public class dataBaseControl
 
 		return m;
 		
+	}
+
+	public static void deleteEntry(int entryNum){
+		try{
+			statement.executeQuery("USE AddressBook");
+			statement.executeUpdate("DELETE FROM Name WHERE id=" + entryNum);
+			conn.commit();			
+		}
+		catch(Exception e){
+			//we need to implement a joptionpane here....
+		}
 	}
 
 

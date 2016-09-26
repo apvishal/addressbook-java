@@ -26,12 +26,16 @@ class deleteView extends JPanel{
 			public void actionPerformed(ActionEvent e){
 				//perform operation...
 				//System.out.println(cbModel.getSelectedItem().toString());
-				int result = JOptionPane.showOptionDialog(null, "Are you sure you want to"
+
+				if (JOptionPane.showOptionDialog(null, "Are you sure you want to"
 				+ " delete the following option below?\n\n" + cbModel.getSelectedItem().toString(), 
 				"Confirm Delete", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE, null,
-				buttonOptions, buttonOptions[1]);
-
-
+				buttonOptions, buttonOptions[1]) == JOptionPane.YES_OPTION){
+					String strArray[] = cbModel.getSelectedItem().toString().split(" ");
+//					System.out.println(Integer.parseInt(strArray[0]));
+					dataBaseControl.deleteEntry(Integer.parseInt(strArray[0]));
+					refresh_model();
+				}
 			}
 		});
 
