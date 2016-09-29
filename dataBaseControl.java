@@ -1,7 +1,13 @@
 import java.sql.*;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.awt.*;
 import javax.swing.*;
-
+import javax.swing.JTable;
+import javax.swing.table.TableModel;
+import javax.swing.table.DefaultTableModel;
+import java.util.Vector;
+import java.util.Iterator;
 /*for this file, i have left the username, password, and url
 fields blank for privacy...
 */
@@ -23,11 +29,11 @@ public class dataBaseControl
 	public dataBaseControl()
 	{
 
-		url = "jdbc:mysql://localhost/";
+		url = "jdbc:mysql://localhost/AddressBook";
 
 		//blank for privacy purposes
-		user = "";
-		pw = "";
+		user = "root";
+		pw = "vishal";
 		
 		try{
 
@@ -125,6 +131,48 @@ public class dataBaseControl
 
 		return m;
 		
+	}
+
+	public static DefaultTableModel get_tableModel(){
+		Vector<String> column_vec = new Vector<String>();
+		Vector<Vector> data_vec = new Vector<Vector>();
+		try{
+			//grab column names...
+			rs = statement.executeQuery("SELECT * FROM Name");
+			ResultSetMetaData rs_md = rs.getMetaData();
+
+			int num_columns = rs_md.getColumnCount();
+
+			//store the column names...
+			for (int i = 0; i < num_columns; ++i){
+				column_vec.add(rs_md.getColumnName(i));
+			}
+
+			Iterator it = column_vec.iterator();
+			while(it.hasNext()){
+				System.out.println(it.next());
+			}
+
+
+			//store the data into a data vector...
+			Vector row;
+
+			while(rs.next()){
+				row = new Vector(num_columns);
+				for (int i = 0; i < num_columns; ++i){
+					row.add(rs.getString(i));
+				}
+				data_vec.add(row);
+			}
+
+		}
+		catch(Exception e){
+		System.out.println("AYOOOO");
+		//need to implement joptionpane...
+		}
+
+		DefaultTableModel model = new DefaultTableModel(data_vec, column_vec);
+		return model;
 	}
 
 	public static void deleteEntry(int entryNum){
