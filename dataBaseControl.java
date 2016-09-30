@@ -111,7 +111,6 @@ public class dataBaseControl
 		try{
 //			statement.executeQuery("USE AddressBook");
 			rs = statement.executeQuery("SELECT * FROM Name");
-			System.out.println("HERE");
 			while(rs.next()){
 			final_string = "";
 			id_num = rs.getInt(1);
@@ -145,13 +144,10 @@ public class dataBaseControl
 
 			//store the column names...
 			for (int i = 0; i < num_columns; ++i){
-				column_vec.add(rs_md.getColumnName(i));
+				column_vec.add(rs_md.getColumnName(i+1));
+//				System.out.println(rs_md.getColumnName(i+1));
 			}
 
-			Iterator it = column_vec.iterator();
-			while(it.hasNext()){
-				System.out.println(it.next());
-			}
 
 
 			//store the data into a data vector...
@@ -160,14 +156,14 @@ public class dataBaseControl
 			while(rs.next()){
 				row = new Vector(num_columns);
 				for (int i = 0; i < num_columns; ++i){
-					row.add(rs.getString(i));
+					row.add(rs.getString(i+1));
 				}
 				data_vec.add(row);
 			}
 
 		}
 		catch(Exception e){
-		System.out.println("AYOOOO");
+		System.out.println("tableModel Error: " + e.getMessage());
 		//need to implement joptionpane...
 		}
 

@@ -11,7 +11,7 @@ public class View{
 
 	public static void initFrame(){
 		mainFrame = new JFrame("Address Book Proggie");
-		mainFrame.setSize(600,300);
+		mainFrame.setSize(800,400);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		tabs = new JTabbedPane();
