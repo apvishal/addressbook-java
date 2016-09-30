@@ -37,6 +37,59 @@ class insertView extends JPanel{
 		this.setLayout(gl);
 		gl.setAutoCreateGaps(true);
 		
+		gl.setHorizontalGroup(gl.createSequentialGroup()
+				.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(fnLabel)
+						.addComponent(streetLabel)
+						.addComponent(stateLabel)
+						.addComponent(phoneLabel))
+				.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+						.addComponent(prompt)
+					.addGroup(gl.createSequentialGroup()
+							.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+									.addComponent(fnField)
+									.addComponent(streetField)
+									.addComponent(stateField)
+									.addComponent(phoneField)
+									.addComponent(inputButton))
+							.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+									.addComponent(lnLabel)
+									.addComponent(cityLabel)
+									.addComponent(zipLabel))
+							.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+									.addComponent(lnField)
+									.addComponent(cityField)
+									.addComponent(zipField)
+									.addComponent(clearButton))))
+		);
+		
+		gl.setVerticalGroup(gl.createSequentialGroup()
+				.addComponent(prompt)
+					.addGroup(gl.createParallelGroup(GroupLayout.Alignment.LEADING)
+							.addGroup(gl.createSequentialGroup()
+									.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+										.addComponent(fnLabel)
+										.addComponent(fnField)
+										.addComponent(lnLabel)
+										.addComponent(lnField))
+									.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+											.addComponent(streetLabel)
+											.addComponent(streetField)
+											.addComponent(cityLabel)
+											.addComponent(cityField))
+									.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+											.addComponent(stateLabel)
+											.addComponent(stateField)
+											.addComponent(zipLabel)
+											.addComponent(zipField))
+									.addGroup(gl.createParallelGroup(GroupLayout.Alignment.BASELINE)
+											.addComponent(inputButton)
+											.addComponent(clearButton))))
+											
+	);
+		
+							
+		
 		
 	}
 
