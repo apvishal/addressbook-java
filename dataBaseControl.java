@@ -8,6 +8,7 @@ import javax.swing.table.TableModel;
 import javax.swing.table.DefaultTableModel;
 import java.util.Vector;
 import java.util.Iterator;
+
 /*for this file, i have left the username, password, and url
 fields blank for privacy...
 */
@@ -29,11 +30,11 @@ public class dataBaseControl
 	public dataBaseControl()
 	{
 
-		url = "jdbc:mysql://localhost/AddressBook";
+		url = "jdbc:mysql://localhost/";
 
 		//blank for privacy purposes
-		user = "root";
-		pw = "vishal";
+		user = "";
+		pw = "";
 		
 		try{
 

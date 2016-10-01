@@ -15,9 +15,9 @@ public class View{
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		tabs = new JTabbedPane();
-		tabs.addTab("Insert", new insertView());
+//		tabs.addTab("Insert", new insertView());
 		tabs.addTab("Search", new searchView());
-		tabs.addTab("Delete", new deleteView());
+//		tabs.addTab("Delete", new deleteView());
 		mainFrame.add(tabs);
 		mainFrame.setVisible(true);
 		

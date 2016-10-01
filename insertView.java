@@ -30,9 +30,16 @@ class insertView extends JPanel implements ActionListener{
 	private JButton inputButton = new JButton("Input");
 	private JButton clearButton = new JButton("Clear");
 	
+	//frame
+	private JFrame insertFrame;
+
 	public insertView(){
-		this.setBorder(BorderFactory.createMatteBorder(5,5,5,5, Color.PINK));
-		
+
+		insertFrame = new JFrame("Insert new Entry");
+		insertFrame.setSize(600,200);
+		insertFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
 		final GroupLayout gl = new GroupLayout(this);
 		this.setLayout(gl);
 		gl.setAutoCreateGaps(true);
@@ -101,8 +108,8 @@ class insertView extends JPanel implements ActionListener{
 
 
 );
-
-
+		insertFrame.add(this);
+		insertFrame.setVisible(true);
 
 	}
 
@@ -113,9 +120,12 @@ class insertView extends JPanel implements ActionListener{
 							streetField.getText(), cityField.getText(),
 							stateField.getText(), zipField.getText(),
 							phoneField.getText());
-			//we must update our list incase of the user wants to delete a an input...
-			deleteView.refresh_model();
+			//we must update our table...
+			searchView.refresh_model();
 
+			//exit the insert page...
+			insertFrame.setVisible(false);
+			insertFrame.dispose();
 		}
 		else{
 			fnField.setText("");
