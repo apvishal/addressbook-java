@@ -37,7 +37,7 @@ class insertView extends JPanel implements ActionListener{
 
 		insertFrame = new JFrame("Insert new Entry");
 		insertFrame.setSize(600,200);
-		insertFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		insertFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 
 		final GroupLayout gl = new GroupLayout(this);

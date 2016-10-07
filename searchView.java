@@ -6,7 +6,7 @@ import javax.swing.table.TableModel;
 import javax.swing.table.DefaultTableModel;
 import java.util.Vector;
 
-public class searchView extends JPanel implements ActionListener{
+public class searchView extends JFrame implements ActionListener{
 
 	private static JTable table;
 	private JScrollPane pane;
@@ -20,11 +20,15 @@ public class searchView extends JPanel implements ActionListener{
 	
 	public searchView(){
 
+		this.setTitle("Address Book Proggie");
+		this.setSize(800,400);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 		table = new JTable(init_table());
 		pane = new JScrollPane(table);
 		pane.setPreferredSize(new Dimension(600,400));
 
-		GroupLayout gl = new GroupLayout(this);
+		GroupLayout gl = new GroupLayout(this.getContentPane());
 		this.setLayout(gl);
 		gl.setAutoCreateGaps(true);
 
@@ -61,7 +65,13 @@ public class searchView extends JPanel implements ActionListener{
 				.addComponent(deleteButton)
 				.addComponent(quitButton))
 		);
+		
+		this.pack();
+		this.setVisible(true);
+
 	}
+
+	
 
 	public DefaultTableModel init_table(){
 		return dataBaseControl.get_tableModel();

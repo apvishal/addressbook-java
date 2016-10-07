@@ -8,7 +8,7 @@ public class Main{
 	public void runApplication(){
 	
 		dataBaseControl run_db = new dataBaseControl();
-		View.initFrame();
+		searchView view = new searchView();
 	}
 }
 

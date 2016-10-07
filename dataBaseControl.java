@@ -30,11 +30,11 @@ public class dataBaseControl
 	public dataBaseControl()
 	{
 
-		url = "jdbc:mysql://localhost/";
+		url = "jdbc:mysql://localhost/Addressbook";
 
 		//blank for privacy purposes
-		user = "";
-		pw = "";
+		user = "root";
+		pw = "vishal";
 		
 		try{
 
